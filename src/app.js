@@ -7,6 +7,9 @@ import forecast from "./utils/forecast.js";
 
 const app = express();
 
+// Port
+const port = process.env.PORT || 3000;
+
 // Defined paths for express config
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -98,6 +101,6 @@ app.get("*splat", (req, res) => {
   });
 });
 
-app.listen(3000, () => {
+app.listen(port, () => {
   console.log("Server is up on port 3000");
 });

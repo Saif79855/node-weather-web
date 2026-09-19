@@ -1,5 +1,5 @@
 const forecast = async (latitude, longitude, callback) => {
-  const url = `https://api.weatherstack.com/current?access_key=7de6328fa3e6192f16fd7b27cf02084b&query=${latitude},${longitude}&units=f`;
+  const url = `https://api.weatherstack.com/current?access_key=${process.env.WEATHER_API_KEY}&query=${latitude},${longitude}&units=f`;
 
   try {
     const response = await fetch(url);
