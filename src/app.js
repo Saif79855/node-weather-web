@@ -35,7 +35,7 @@ app.get("", (req, res) => {
 app.get("/about", (req, res) => {
   res.render("about", {
     title: "About me",
-    name: "Saif",
+    name: "Abdul",
   });
 });
 
@@ -62,7 +62,7 @@ app.get("/weather", (req, res) => {
 
       forecast(latitude, longitude, (forecastData, error) => {
         if (error) {
-          return res.send({ error });
+          return res.send({ error: error.message });
         }
         res.send({
           forecast: forecastData,
@@ -96,7 +96,7 @@ app.get("/help/*splat", (req, res) => {
 app.get("*splat", (req, res) => {
   res.render("404", {
     title: "404",
-    name: "Saif",
+    name: "Abdul",
     errorMessage: "Page Not Found",
   });
 });

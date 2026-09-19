@@ -10,7 +10,7 @@ const forecast = async (latitude, longitude, callback) => {
     const data = await response.json();
 
     if (data.error) {
-      throw new Error(`Unable to find Location`);
+      throw new Error(`Out of Service. we will get back shortly`);
     }
 
     const temp = data.current.temperature;
